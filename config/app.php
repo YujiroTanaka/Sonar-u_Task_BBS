@@ -147,6 +147,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        kanazaca\CounterCache\CounterCacheServiceProvider::class,
 
     ],
 

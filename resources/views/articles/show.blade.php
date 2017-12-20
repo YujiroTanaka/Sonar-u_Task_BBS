@@ -6,6 +6,8 @@
 
     <hr/>
 
+    @include('errors.form_errors')
+
     <article>
         <div class="body">{{ $article->body }}</div>
     </article>
@@ -14,16 +16,12 @@
     <p>投稿日時: {{ $article->updated_at }}</p>
 
 
-    @if (Auth::check())
         <br/>
-
+        <div class="btn-toolbar">
         {!! link_to(route('articles.edit', [$article->id]), '編集', ['class' => 'btn btn-primary']) !!}
 
-        <br/>
-        <br/>
-
         {!! delete_form(['articles', $article->id]) !!}
-    @endif
+        </div>
 
     <hr/>
 
@@ -35,16 +33,16 @@
 
     @foreach($article->comment as $single_comment)
      <h4><li>{{ $single_comment->comment }}</li></h4>
-     <p>「{{ $single_comment->commenter }}」さんより</p>
+     {{ $single_comment->commenter }} さんより<br />
+     {{ $single_comment->updated_at }}
      <br />
     @endforeach
 
     @if (Auth::check())
     <hr/>
-    <br />
 
 
-
+    <h3>コメント投稿</h3>
 
 
     {!! Form::open(['url' => 'comments']) !!}
@@ -71,6 +69,8 @@
  <div class="form-group">
      <button type="submit" class="btn btn-primary">投稿する</button>
  </div>
+
+ {!! Form::close() !!}
 
 
 

@@ -47,9 +47,8 @@ class ArticlesController extends Controller
 
     public function update($id, ArticleRequest $request) {
         $article = Article::findOrFail($id);
-
         $article->update($request->all());
-        \Flash::success('スレッドを編集しました!!');
+        \Session::flash('flash_message', 'スレッドを編集しました!!');
 
         return redirect()->route('articles.show', [$article->id]);
     }
@@ -58,7 +57,7 @@ class ArticlesController extends Controller
         $article = Article::findOrFail($id);
 
         $article->delete();
-        \Flash::success('スレッドを削除しました!!');
+        \Session::flash('flash_message', 'スレッドを削除しました!!');
         return redirect()->route('articles.index');
     }
 

@@ -34,30 +34,11 @@ class CommentsController extends Controller
      ];
      $this->comments->create($data);
 
-    //$data = $request->all();
-    //$id = get_the_ID();
-
-    //Comment::create([
-        //'comment' => $data['comment'],
-        //'commenter' => $data['commenter'],
-      //'article_id' => $id
-    //]);
-
-
-    //\Auth::user()->articles()->create($request->all());
-      //$inputs = \Request::all();
-      //Comment::create($inputs);
-
-
-      //\Auth::articles()->comments()->create($request->all());
 
       \Session::flash('flash_message', 'コメントを追加しました。');
 
-      //$inputs = \Request::all();
 
-        //Comment::create($inputs);
-
-      return redirect()->route('articles.index');
+      return redirect()->route('articles.show', [$request->get('article_id')]);
   }
     //
 }

@@ -14,9 +14,9 @@ return [
     */
 
     'password' => 'Passwords must be at least six characters and match the confirmation.',
-    'user' => "入力されたメールアドレスが見つかりません。",
-    'token' => 'メールアドレスが間違っています。',
-    'sent' => 'パスワード再設定リンクをメールで送りました。',
-    'reset' => 'パスワードは再設定されています。',
+    'user' => "We can't find a user with that e-mail address.",
+    'token' => 'This password reset token is invalid.',
+    'sent' => 'We have e-mailed your password reset link!',
+    'reset' => 'Your password has been reset!',
 
 ];

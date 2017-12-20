@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
         "laravelcollective/html": "^5.1.0",
         "laracasts/flash": "^3.0",
-        "barryvdh/laravel-ide-helper": "^2.4"
+        "barryvdh/laravel-ide-helper": "^2.4",
+        "kanazaca/counter-cache": "1.0.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
